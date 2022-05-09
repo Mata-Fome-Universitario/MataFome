@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {}
+    "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {}
   },
   "projects": {
-    "C:\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {
+    "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+        "projectUniqueName": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
         "projectName": "MataFomeAPI",
-        "projectPath": "C:\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
-        "packagesPath": "C:\\Users\\savio.santos\\.nuget\\packages\\",
-        "outputPath": "C:\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
+        "projectPath": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+        "packagesPath": "C:\\Users\\savin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\savio.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\savin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +43,34 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -66,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
