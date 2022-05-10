@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MataFomeAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace MataFomeAPI.Controllers
 {
@@ -115,9 +116,8 @@ namespace MataFomeAPI.Controllers
 
             return Ok("Usuário deletado com sucesso");
         }
-
-        [Route("/login")]
-        [HttpPost]
+        [DisableCors]
+        [Route("login"), HttpPost]
         public async Task<ActionResult<Usuario>> Login(string email, string senha)
         {
             Usuario usuario = _context.Usuarios.Where(x => x.Email == email).FirstOrDefault();
@@ -129,6 +129,7 @@ namespace MataFomeAPI.Controllers
                 if (usuario.Senha != senha)
                     return Problem("Senha incorreta!");
 
+                usuario.Senha = "****";
                 return Ok(usuario);
             }
         }

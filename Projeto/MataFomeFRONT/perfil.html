@@ -40,7 +40,10 @@
                     <a class="nav-link" href="carrinho.html">Carrinho</a>
                   </li>
                   <li class="nav-item" id="saldo">
-                    <a class="nav-link">Saldo: R$25.00</a>
+                    <a class="nav-link">R$25.00</a>
+                  </li>
+                  <li class="nav-item" id="logout" href="login.html">
+                    <a class="nav-link" href="login.html">Sair</a>
                   </li>
                   
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -70,7 +73,7 @@
                   </div>
                   <div class="panel-body">
                     <div class="row">
-                      <div class="col-md-4 col-lg-4 "> <img alt="User Pic" src="img/people-and-lifestyle-concept-attractive-young-caucasian-male-in-good-mood-in-blue-long-sleeved-shirt-smiling-cheerfully-showing-perfect-white-teeth-happy-with-positive-news-keeping-arms-folded.jpg" class="img-circle img-responsive"> </div>
+                      <!-- <div class="col-md-4 col-lg-4 "> <img alt="User Pic" src="img/people-and-lifestyle-concept-attractive-young-caucasian-male-in-good-mood-in-blue-long-sleeved-shirt-smiling-cheerfully-showing-perfect-white-teeth-happy-with-positive-news-keeping-arms-folded.jpg" class="img-circle img-responsive"> </div> -->
                       
                       <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
                         <dl>
@@ -103,14 +106,12 @@
                               <td>Email</td>
                               <td><a href="mailto:bryan@pucminas.com">bryan@pucminas.com</a></td>
                             </tr>
-                              <td>Número de telefone</td>
-                              <td>(31) 98564-9090 - (Celular)
-                              </td>
-                            </tr>
-
                           </tbody>
                         </table>
-                        <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger">Editar Perfil</button></div>
+                        <div class="center">
+                          <button data-toggle="modal" data-target="#changePasswordModal" class="btn btn-danger">Alterar Senha</button>
+                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger">Editar Perfil</button>
+                        </div>
                         <!-- line modal -->
                         <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                           <div class="modal-dialog">

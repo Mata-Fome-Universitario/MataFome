@@ -1,5 +1,4 @@
 /*Login*/
-
 window.onload = () => {
     nome.onchange = () => {
         console.log(nome.value);
