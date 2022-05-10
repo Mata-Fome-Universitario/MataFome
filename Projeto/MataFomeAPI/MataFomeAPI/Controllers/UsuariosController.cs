@@ -34,7 +34,7 @@ namespace MataFomeAPI.Controllers
 
             if (usuario == null)
             {
-                return NotFound();
+                return Ok("Usuário não encontrado");
             }
 
             return usuario;
@@ -75,7 +75,7 @@ namespace MataFomeAPI.Controllers
             catch (DbUpdateConcurrencyException ex)
             {
                 if (!CpfExists(cpf))
-                    return Problem("Nenhum usuário com esse CPF foi encontrado");
+                    return Ok("Nenhum usuário com esse CPF foi encontrado");
                 else
                     throw;
             }
@@ -87,13 +87,13 @@ namespace MataFomeAPI.Controllers
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario usuario)
         {
             if (CpfExists(usuario.CPF))
-                return Problem("Já existe um usuário cadastrado com esse CPF");
+                return Ok("Já existe um usuário cadastrado com esse CPF");
 
             if (EmailExists(usuario.Email))
-                return Problem("Já existe um usuário cadastrado com esse Email");
+                return Ok("Já existe um usuário cadastrado com esse Email");
 
             if (!ValidateRole(usuario.Cargo))
-                return Problem("Digite um cargo válido, [Vendedor, Gerente ou Cliente]");
+                return Ok("Digite um cargo válido, [Vendedor, Gerente ou Cliente]");
 
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
@@ -108,7 +108,7 @@ namespace MataFomeAPI.Controllers
             var usuario = await _context.Usuarios.FindAsync(cpf);
             if (usuario == null)
             {
-                return Problem("Nenhum usuário com esse CPF foi encontrado");
+                return Ok("Nenhum usuário com esse CPF foi encontrado");
             }
 
             _context.Usuarios.Remove(usuario);
@@ -116,18 +116,18 @@ namespace MataFomeAPI.Controllers
 
             return Ok("Usuário deletado com sucesso");
         }
-        [DisableCors]
+
         [Route("login"), HttpPost]
         public async Task<ActionResult<Usuario>> Login(string email, string senha)
         {
             Usuario usuario = _context.Usuarios.Where(x => x.Email == email).FirstOrDefault();
 
             if(usuario == null)
-                return Problem("Email incorreto!");
+                return Ok("Email incorreto!");
             else
             {
                 if (usuario.Senha != senha)
-                    return Problem("Senha incorreta!");
+                    return Ok("Senha incorreta!");
 
                 usuario.Senha = "****";
                 return Ok(usuario);

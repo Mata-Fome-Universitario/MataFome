@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Graph;
 using Microsoft.OpenApi.Models;
 
 namespace MataFomeAPI
@@ -18,6 +19,8 @@ namespace MataFomeAPI
 
         public IConfiguration Configuration { get; }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -26,6 +29,16 @@ namespace MataFomeAPI
             services.AddDbContextPool<AppDbContext>(options =>
                         options.UseMySql(mysqlConnection,
                                     ServerVersion.AutoDetect(mysqlConnection)));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("*")
+                                      .AllowAnyHeader();
+                                  });
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -48,7 +61,7 @@ namespace MataFomeAPI
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 

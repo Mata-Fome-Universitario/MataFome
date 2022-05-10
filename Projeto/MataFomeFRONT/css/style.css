@@ -4,6 +4,13 @@
     margin-left: 680px;
 }
 
+.textAlert {
+    color: red;
+}
+
+.hidden {
+    display: none;
+}
   
   
   /*INICIO LOGIN*/
