@@ -42,25 +42,44 @@ namespace MataFomeAPI.Controllers
         [HttpPut("{cpf}")]
         public async Task<IActionResult> PutUsuario(long cpf, Usuario usuario)
         {
-            _context.Entry(usuario).State = EntityState.Modified;
-
             try
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CpfExists(cpf))
+                Usuario oldUser = _context.Usuarios.Where(x => x.CPF == cpf).FirstOrDefault();
+                if (string.IsNullOrEmpty(usuario.Nome))
+                    usuario.Nome = oldUser.Nome;
+
+                if (string.IsNullOrEmpty(usuario.Email))
+                    usuario.Email = oldUser.Email;
+
+                if (!ValidateRole(usuario.Cargo))
+                    usuario.Cargo = oldUser.Cargo;
+
+                usuario.Senha = oldUser.Senha;
+                usuario.Saldo = oldUser.Saldo;
+
+                if (usuario.CPF != 0 && usuario.CPF != cpf)
                 {
-                    return NotFound();
+                    _context.Usuarios.Remove(oldUser);
+                    await _context.SaveChangesAsync();
+
+                    _context.Usuarios.Add(usuario);
+                    await _context.SaveChangesAsync();
                 }
                 else
                 {
-                    throw;
+                    _context.Entry(usuario).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
                 }
             }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                if (!CpfExists(cpf))
+                    return Problem("Nenhum usuário com esse CPF foi encontrado");
+                else
+                    throw;
+            }
 
-            return NoContent();
+            return Ok("Usuário atualizado com sucesso");
         }
 
         [HttpPost]
@@ -88,13 +107,30 @@ namespace MataFomeAPI.Controllers
             var usuario = await _context.Usuarios.FindAsync(cpf);
             if (usuario == null)
             {
-                return NotFound();
+                return Problem("Nenhum usuário com esse CPF foi encontrado");
             }
 
             _context.Usuarios.Remove(usuario);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok("Usuário deletado com sucesso");
+        }
+
+        [Route("/login")]
+        [HttpPost]
+        public async Task<ActionResult<Usuario>> Login(string email, string senha)
+        {
+            Usuario usuario = _context.Usuarios.Where(x => x.Email == email).FirstOrDefault();
+
+            if(usuario == null)
+                return Problem("Email incorreto!");
+            else
+            {
+                if (usuario.Senha != senha)
+                    return Problem("Senha incorreta!");
+
+                return Ok(usuario);
+            }
         }
 
         private bool CpfExists(long cpf)
