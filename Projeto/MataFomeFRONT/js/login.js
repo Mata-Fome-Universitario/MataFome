@@ -23,7 +23,6 @@ $(document).ready ( function () {
             }
             else {
                 Cookies.set('usuario', JSON.stringify(server_response), { expires: 7, path: '/' });
-                // var usuario = JSON.parse(Cookies.get('usuario'));
                 window.location.href = "home.html";
             }
         }).fail(function (server_response) {
