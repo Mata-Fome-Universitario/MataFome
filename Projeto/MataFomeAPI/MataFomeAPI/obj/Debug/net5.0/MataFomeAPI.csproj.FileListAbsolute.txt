@@ -35,7 +35,6 @@ C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFome
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\MataFomeAPI.runtimeconfig.json
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\MataFomeAPI.runtimeconfig.dev.json
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\MataFomeAPI.dll
-C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\ref\MataFomeAPI.dll
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\MataFomeAPI.pdb
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\Humanizer.dll
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
@@ -171,3 +170,4 @@ C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFome
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\System.Text.Encodings.Web.dll
 C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\bin\Debug\net5.0\System.Text.Json.dll
+C:\Users\savin\Documents\PUC\Trabalho Interdisciplinar\MataFome\Projeto\MataFomeAPI\MataFomeAPI\obj\Debug\net5.0\refint\MataFomeAPI.dll

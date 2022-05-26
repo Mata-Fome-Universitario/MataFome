@@ -1,4 +1,4 @@
-var route = "https://localhost:44373/api/Usuarios/"
+var route = "https://localhost:44373/api/"
 
 $(document).ready ( function () {
 
@@ -9,7 +9,7 @@ $(document).ready ( function () {
         var senha = $("#senhaInput").val();
 
         $.ajax({
-            url: route + "login?email=" + email + "&senha=" + senha,
+            url: route + "Usuarios/" + "login?email=" + email + "&senha=" + senha,
             type: "POST",
             contentType: "application/json",
         }).done(function (server_response) {
