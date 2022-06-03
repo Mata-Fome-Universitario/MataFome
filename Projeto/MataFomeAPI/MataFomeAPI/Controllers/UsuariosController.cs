@@ -41,7 +41,7 @@ namespace MataFomeAPI.Controllers
         }
 
         [HttpPut("{cpf}")]
-        public async Task<IActionResult> PutUsuario(long cpf, Usuario usuario)
+        public async Task<IActionResult> PutUsuario(string cpf, Usuario usuario)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace MataFomeAPI.Controllers
                 usuario.Senha = oldUser.Senha;
                 usuario.Saldo = oldUser.Saldo;
 
-                if (usuario.CPF != 0 && usuario.CPF != cpf)
+                if (!string.IsNullOrWhiteSpace(usuario.CPF) && usuario.CPF != cpf)
                 {
                     _context.Usuarios.Remove(oldUser);
                     await _context.SaveChangesAsync();
@@ -134,7 +134,7 @@ namespace MataFomeAPI.Controllers
             }
         }
 
-        private bool CpfExists(long cpf)
+        private bool CpfExists(string cpf)
         {
             return _context.Usuarios.Any(e => e.CPF == cpf);
         }

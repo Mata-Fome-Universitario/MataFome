@@ -31,10 +31,10 @@ namespace MataFomeAPI.Models
                     .HasPrecision(10, 2);
 
             modelBuilder.Entity<Usuario>()
-                .HasData(new Usuario { CPF = 15468614677, Nome = "Sávio Cardoso", Email = "cardososavio5@gmail.com", Cargo = "Gerente", Senha = "gerente@123", Saldo = 0.00 });
+                .HasData(new Usuario { CPF = "15468614677", Nome = "Sávio Cardoso", Email = "cardososavio5@gmail.com", Cargo = "Gerente", Senha = "gerente@123", Saldo = 0.00 });
 
             modelBuilder.Entity<Usuario>()
-                .HasData(new Usuario { CPF = 86264702072, Nome = "João Gomes", Email = "savioshippuden13@gmail.com", Cargo = "Vendedor", Senha = "vendedor@123", Saldo = 0.00 });
+                .HasData(new Usuario { CPF = "86264702072", Nome = "João Gomes", Email = "savioshippuden13@gmail.com", Cargo = "Vendedor", Senha = "vendedor@123", Saldo = 0.00 });
         }
     }
 }

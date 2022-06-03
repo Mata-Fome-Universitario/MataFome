@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MataFomeAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220508231625_Inicial")]
+    [Migration("20220603000209_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -16,7 +16,7 @@ namespace MataFomeAPI.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.6");
+                .HasAnnotation("ProductVersion", "5.0.16");
 
             modelBuilder.Entity("MataFomeAPI.Models.Item", b =>
                 {
@@ -26,6 +26,9 @@ namespace MataFomeAPI.Migrations
 
                     b.Property<string>("Descricao")
                         .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Imagem")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
@@ -79,9 +82,8 @@ namespace MataFomeAPI.Migrations
 
             modelBuilder.Entity("MataFomeAPI.Models.Usuario", b =>
                 {
-                    b.Property<long>("CPF")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                    b.Property<string>("CPF")
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Cargo")
                         .IsRequired()
@@ -100,7 +102,6 @@ namespace MataFomeAPI.Migrations
                         .HasColumnType("double");
 
                     b.Property<string>("Senha")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("CPF");
@@ -110,7 +111,7 @@ namespace MataFomeAPI.Migrations
                     b.HasData(
                         new
                         {
-                            CPF = 15468614677L,
+                            CPF = "15468614677",
                             Cargo = "Gerente",
                             Email = "cardososavio5@gmail.com",
                             Nome = "Sávio Cardoso",
@@ -119,7 +120,7 @@ namespace MataFomeAPI.Migrations
                         },
                         new
                         {
-                            CPF = 86264702072L,
+                            CPF = "86264702072",
                             Cargo = "Vendedor",
                             Email = "savioshippuden13@gmail.com",
                             Nome = "João Gomes",

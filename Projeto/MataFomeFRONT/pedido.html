@@ -13,6 +13,8 @@
     <script src="jquery/jquery-1.11.1.min.js"></script>
     <script src="jquery/jquery.min.js"></script>
     <script src="/path/to/js.cookie.js"></script>
+    <script src="js/pedido.js"></script>
+    <script src="js/js.js"></script>
 
     <title>Pedidos</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
@@ -23,23 +25,32 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="home.html">Mata Fome Univeristária</a>
+              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="perfil.html">Perfil</a>
+                  <li class="nav-item" id="nav_cardapio">
+                    <a class="nav-link" href="cardapio.html">Cardápio</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pedido.html">Pedidos</a>
+                  <li class="nav-item" id="nav_pedidos">
+                    <a class="nav-link active" href="pedido.html">Pedidos</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="nav_carrinho">
                     <a class="nav-link" href="carrinho.html">Carrinho</a>
                   </li>
+                  <li class="nav-item" id="nav_usuarios">
+                    <a class="nav-link" href="usuarios.html">Usuários</a>
+                  </li>
+                  <li class="nav-item" id="nav_recarga">
+                    <a class="nav-link" href="recarga.html">Recarga</a>
+                  </li>
+                  <li class="nav-item" id="nav_perfil">
+                    <a class="nav-link" href="perfil.html">Perfil</a>
+                  </li>
                   <li class="nav-item" id="saldo">
-                    <a class="nav-link">R$25.00</a>
+                    <a class="nav-link"></a>
                   </li>
                   <li class="nav-item" id="logout" href="login.html">
                     <a class="nav-link" href="login.html">Sair</a>
@@ -83,7 +94,10 @@
                                 <p>Detalhes</p>
                                 <p>Esfirra e refresco</p>
                                 <p>R$9.00</p>
-                                <button type="button" class="btn btn-light">Entregar</button>
+                                <div class="vendedor_buttons">
+                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
+                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
+                                </div>
                             </div>
                         </div>
                         <div class="item">
@@ -92,7 +106,10 @@
                                 <p>Detalhes</p>
                                 <p>Coca Cola e Suco Natural de Laranja</p>
                                 <p>R$9.50</p>
-                                <button type="button" class="btn btn-light">Entregar</button>
+                                <div class="vendedor_buttons">
+                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
+                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
+                                </div>
                             </div>
                         </div>
                         <div class="item">
@@ -101,7 +118,10 @@
                                 <p>Detalhes</p>
                                 <p id="suco">Suco Natural de Laranja</p>
                                 <p>R$4.50</p>
-                                <button type="button" class="btn btn-light">Entregar</button>
+                                <div class="vendedor_buttons">
+                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
+                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
+                                </div>
                             </div>
                         </div>
                         <div class="item">
@@ -110,7 +130,10 @@
                                 <p>Detalhes</p>
                                 <p>Coca Cola</p>
                                 <p>R$5.00</p>
-                                <button type="button" class="btn btn-light">Entregar</button>
+                                <div class="vendedor_buttons">
+                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
+                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
+                                </div>
                             </div>
                         </div>
                         <div class="item">
@@ -119,7 +142,10 @@
                                 <p>Detalhes</p>
                                 <p>Salgado e refresco</p>
                                 <p>R$7.50</p>
-                                <button type="button" class="btn btn-light">Entregar</button>
+                                <div class="vendedor_buttons">
+                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
+                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
+                                </div>
                             </div>
                         </div>
                         

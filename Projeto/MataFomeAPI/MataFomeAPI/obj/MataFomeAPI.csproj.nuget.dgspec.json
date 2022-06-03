@@ -1,21 +1,18 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {}
+    "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {
+    "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+        "projectUniqueName": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
         "projectName": "MataFomeAPI",
-        "projectPath": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+        "projectPath": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
         "packagesPath": "C:\\Users\\savin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\savin\\Documents\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
+        "outputPath": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\savin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -98,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

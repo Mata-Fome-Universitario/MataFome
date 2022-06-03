@@ -2,8 +2,6 @@ var route = "https://localhost:44373/api/"
 
 $(document).ready ( function () {
 
-    Cookies.json = true;
-
     $("#loginBtn").click(function() {
         var email = $("#emailInput").val();
         var senha = $("#senhaInput").val();
@@ -22,8 +20,8 @@ $(document).ready ( function () {
                 $("#alertEmail").addClass("hidden");
             }
             else {
-                Cookies.set('usuario', JSON.stringify(server_response), { expires: 7, path: '/' });
-                window.location.href = "home.html";
+                window.localStorage.setItem('usuario', JSON.stringify(server_response));
+                window.location.href = "cardapio.html";
             }
         }).fail(function (server_response) {
             console.error("Falha de comunicação com o servidor", server_response);

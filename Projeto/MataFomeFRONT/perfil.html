@@ -13,6 +13,7 @@
     <script src="jquery/jquery.min.js"></script>
     <script src="jquery/js.cookie.min.js"></script>
     <script src="js/perfil.js"></script>
+    <script src="js/js.js"></script>
 
 
     <title>Perfil</title>
@@ -26,23 +27,32 @@
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="home.html">Mata Fome Univeristária</a>
+              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="perfil.html">Perfil</a>
+                  <li class="nav-item" id="nav_cardapio">
+                    <a class="nav-link" href="cardapio.html">Cardápio</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="nav_pedidos">
                     <a class="nav-link" href="pedido.html">Pedidos</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item" id="nav_carrinho">
                     <a class="nav-link" href="carrinho.html">Carrinho</a>
                   </li>
+                  <li class="nav-item" id="nav_usuarios">
+                    <a class="nav-link" href="usuarios.html">Usuários</a>
+                  </li>
+                  <li class="nav-item" id="nav_recarga">
+                    <a class="nav-link" href="recarga.html">Recarga</a>
+                  </li>
+                  <li class="nav-item" id="nav_perfil">
+                    <a class="nav-link active" href="perfil.html">Perfil</a>
+                  </li>
                   <li class="nav-item" id="saldo">
-                    <a class="nav-link">R$20.00</a>
+                    <a class="nav-link"></a>
                   </li>
                   <li class="nav-item" id="logout" href="login.html">
                     <a class="nav-link" href="login.html">Sair</a>
@@ -71,7 +81,7 @@
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
                 <div class="panel panel-info">
                   <div class="panel-heading">
-                    <h3 class="panel-title">Bryan Reges</h3>
+                    <h3 class="panel-title" id="perfil_title">Bryan Reges</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row">
@@ -94,19 +104,19 @@
                           <tbody>
                             <tr>
                               <td>Cargo</td>
-                              <td>Aluno</td>
+                              <td id="perfil_cargo">Aluno</td>
                             </tr>
                             <tr>
                               <td>CPF</td>
-                              <td>000.555.333-11</td>
+                              <td id="perfil_CPF">000.555.333-11</td>
                             </tr>
                             <tr>
                               <td>Nome Completo</td>
-                              <td>Bryan Reges</td>
+                              <td id="perfil_nome">Bryan Reges</td>
                             </tr>
                             <tr>
                               <td>Email</td>
-                              <td><a href="mailto:bryan@pucminas.com">bryan@pucminas.com</a></td>
+                              <td><a href="mailto:bryan@pucminas.com" id="perfil_email">bryan@pucminas.com</a></td>
                             </tr>
                           </tbody>
                         </table>

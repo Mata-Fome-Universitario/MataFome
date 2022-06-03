@@ -15,5 +15,7 @@ namespace MataFomeAPI.Models
 
         [Required]
         public double Preco { get; set; }
+
+        public string Imagem { get; set; }
     }
 }

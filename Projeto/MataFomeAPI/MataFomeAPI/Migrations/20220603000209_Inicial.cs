@@ -20,7 +20,9 @@ namespace MataFomeAPI.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Descricao = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Preco = table.Column<double>(type: "double", precision: 10, scale: 2, nullable: false)
+                    Preco = table.Column<double>(type: "double", precision: 10, scale: 2, nullable: false),
+                    Imagem = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -62,13 +64,13 @@ namespace MataFomeAPI.Migrations
                 name: "Usuarios",
                 columns: table => new
                 {
-                    CPF = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CPF = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Nome = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Senha = table.Column<string>(type: "longtext", nullable: false)
+                    Senha = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Cargo = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -83,12 +85,12 @@ namespace MataFomeAPI.Migrations
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "CPF", "Cargo", "Email", "Nome", "Saldo", "Senha" },
-                values: new object[] { 15468614677L, "Gerente", "cardososavio5@gmail.com", "Sávio Cardoso", 0.0, "gerente@123" });
+                values: new object[] { "15468614677", "Gerente", "cardososavio5@gmail.com", "Sávio Cardoso", 0.0, "gerente@123" });
 
             migrationBuilder.InsertData(
                 table: "Usuarios",
                 columns: new[] { "CPF", "Cargo", "Email", "Nome", "Saldo", "Senha" },
-                values: new object[] { 86264702072L, "Vendedor", "savioshippuden13@gmail.com", "João Gomes", 0.0, "vendedor@123" });
+                values: new object[] { "86264702072", "Vendedor", "savioshippuden13@gmail.com", "João Gomes", 0.0, "vendedor@123" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

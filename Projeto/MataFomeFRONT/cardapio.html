@@ -10,32 +10,44 @@
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery/jquery-1.11.1.min.js"></script>
-    <title>Home</title>
+    <script src="js/cardapio.js"></script>
+    <script src="js/js.js"></script>
+    <title>Cardápio</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
-<body id="homeid">
+<body id="cardapioid">
 
     <!--Cabeçalho-->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="home.html">Mata Fome Univeristária</a>
+              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="perfil.html">Perfil</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pedido.html">Pedidos</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="carrinho.html">Carrinho</a>
-                  </li>
+					<li class="nav-item" id="nav_cardapio">
+						<a class="nav-link active" href="cardapio.html">Cardápio</a>
+					</li>
+					<li class="nav-item" id="nav_pedidos">
+						<a class="nav-link" href="pedido.html">Pedidos</a>
+					</li>
+					<li class="nav-item" id="nav_carrinho">
+						<a class="nav-link" href="carrinho.html">Carrinho</a>
+					</li>
+					<li class="nav-item" id="nav_usuarios">
+						<a class="nav-link" href="usuarios.html">Usuários</a>
+					</li>
+                    <li class="nav-item" id="nav_recarga">
+                        <a class="nav-link" href="recarga.html">Recarga</a>
+                    </li>
+					<li class="nav-item" id="nav_perfil">
+						<a class="nav-link" href="perfil.html">Perfil</a>
+					</li>
                   <li class="nav-item" id="saldo">
-                    <a class="nav-link">R$25.00</a>
+                    <a class="nav-link"></a>
                   </li>
                   <li class="nav-item" id="logout" href="login.html">
                     <a class="nav-link" href="login.html">Sair</a>
@@ -83,7 +95,12 @@
                                     <br>
                                     <p class="card-text mb-auto">Hambúrguer, bacon, calabresa, salsicha, ovo, queijo, alface, tomate, maionese e ketchup.
                                     </p>
-                                    <button type="button" class="btn btn-warning">Adicionar ao carrinho +</button>
+                                    <div class="cliente_buttons hidden">
+                                        <button type="button" class="btn btn-warning">Adicionar ao carrinho +</button>
+                                    </div>
+                                    <div class="vendedor_buttons hidden">
+                                        <button type="button" class="btn btn-warning">Editar promoção</button>
+                                    </div>
 
                                 </div>
                                 <img class="card-img-right flex-auto d-none d-lg-block" alt="Thumbnail [200x250]" src="img/Post story instagram hamburguer artesanal .png" style="width: 300px; height: 450px;">
@@ -117,7 +134,13 @@
                                     <div class="text-center"> <img src="img/salgado.webp" width="200"> </div>
                                     <div class="product-details"> <span class="font-weight-bold d-block">R$7.50</span> <span>Salgado e refresco</span>
                                         <div class="buttons d-flex flex-row">
-                                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Adicionar ao carrinho</button>
+                                            <div class="cliente_buttons hidden">
+                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
+                                            </div>
+                                            <div class="vendedor_buttons hidden">
+                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
+                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +150,13 @@
                                     <div class="text-center"> <img src="img/esfirra.webp" width="200"> </div>
                                     <div class="product-details"> <span class="font-weight-bold d-block">R$9.00</span> <span>Esfirra e refresco</span>
                                         <div class="buttons d-flex flex-row">
-                                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Adicionar ao carrinho</button>
+                                            <div class="cliente_buttons hidden">
+                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
+                                            </div>
+                                            <div class="vendedor_buttons hidden">
+                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
+                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +166,13 @@
                                     <div class="text-center"> <img src="img/sucolaranja.jpg" width="200"> </div>
                                     <div class="product-details"> <span class="font-weight-bold d-block">R$4.50</span> <span>Suco Natural de Laranja</span>
                                         <div class="buttons d-flex flex-row">
-                                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Adicionar ao carrinho</button>
+                                            <div class="cliente_buttons hidden">
+                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
+                                            </div>
+                                            <div class="vendedor_buttons hidden">
+                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
+                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,12 +182,20 @@
                                     <div class="text-center"> <img src="img/cocacola.jpg" width="200"> </div>
                                     <div class="product-details"> <span class="font-weight-bold d-block">R$5.00</span> <span>Coca Cola</span>
                                         <div class="buttons d-flex flex-row">
-                                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Adicionar ao carrinho</button>
+                                            <div class="cliente_buttons hidden">
+                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
+                                            </div>
+                                            <div class="vendedor_buttons hidden">
+                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
+                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
+                                            </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="vendedor_buttons">
+                            <button class="btn btn-danger btnAddItem">+</button>
                         </div>
                     </div>
                 </div>      

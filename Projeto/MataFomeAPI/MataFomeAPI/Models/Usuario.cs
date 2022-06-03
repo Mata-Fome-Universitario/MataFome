@@ -5,7 +5,7 @@ namespace MataFomeAPI.Models
     public class Usuario
     {
         [Required, Key]
-        public long CPF { get; set; }
+        public string CPF { get; set; }
 
         [Required]
         public string Nome { get; set; }
