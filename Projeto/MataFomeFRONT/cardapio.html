@@ -12,6 +12,7 @@
     <script src="jquery/jquery-1.11.1.min.js"></script>
     <script src="js/cardapio.js"></script>
     <script src="js/js.js"></script>
+    <script src="jquery/jquery.maskMoney.js" type="text/javascript"></script>
     <title>Cardápio</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
@@ -73,8 +74,60 @@
 
     <main>
 
-        <!--Cardápio-->
+        <div class="hidden">
+            <div id="000" class="col-md-3 cardItem">
+                <div class="card p-3">
+                    <div class="text-center"> <img class="itemImage" src="" width="200"> </div>
+                    <div class="product-details"> <span class="font-weight-bold d-block precoSpan">R$7.50</span> <span class="nomeSpan">Salgado e refresco</span> <br> <span class="descricaoSpan">Salgado de frango e refresco de laranja</span>
+                        <div class="buttons d-flex flex-row">
+                            <div class="cliente_buttons hidden">
+                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
+                            </div>
+                            <div class="vendedor_buttons hidden">
+                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
+                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <h3 class="cardapioVazio">Nenhum item disponível no momento.</h3>
+        </div>
+
+
+        <!-- Modal Adicionar e Editar Item -->
+        <div class="modalFade hidden"></div>
+        <div id="formItem" class="hidden">
+            <div class="col-md-6 col-sm-12">
+                    <h3 class="formItemTitle">Adicionar Item</h3>
+                   <form>
+                      <div class="form-group">
+                         <label>Nome</label>
+                         <input id="itemNome" type="text" class="form-control" placeholder="Nome do Item">
+                         <span id="itemAlertNome" class="textAlert hidden">Nome não pode ser vazio!</span>
+                      </div>
+                      <div class="form-group">
+                         <label>Descrição</label>
+                         <input id="itemDescricao" type="text" class="form-control" placeholder="Descrição do Item">
+                      </div>
+                      <div class="form-group">
+                        <label>Preço</label>
+                        <input type="text" id="itemPreco" class="form-control" placeholder="00.00"/>
+                      </div>
+                      <div class="form-group">
+                        <label for="itemImage">Selecione uma imagem:</label>
+                        <input type="file" accept=".jpg, .png, .jpeg" id="itemImage">
+                      </div>
+
+                      <a id="btnCancelarItem" class="btn btn-light">Cancelar</a>
+                      <button type="button" class="btn btn-danger" id="btnSaveItem">Salvar</button>
+                   </form>
+             </div>
+        </div>
+
+
+        <!--Cardápio-->
         <section id="promocoes" class="promocao">
             <div class="container">
                 <div class="row">
@@ -128,71 +181,8 @@
 
                 <div class="wrapper">
                     <div class="container">
-                        <div class="row g-1">
-                            <div class="col-md-3">
-                                <div class="card p-3">
-                                    <div class="text-center"> <img src="img/salgado.webp" width="200"> </div>
-                                    <div class="product-details"> <span class="font-weight-bold d-block">R$7.50</span> <span>Salgado e refresco</span>
-                                        <div class="buttons d-flex flex-row">
-                                            <div class="cliente_buttons hidden">
-                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
-                                            </div>
-                                            <div class="vendedor_buttons hidden">
-                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
-                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card p-3">
-                                    <div class="text-center"> <img src="img/esfirra.webp" width="200"> </div>
-                                    <div class="product-details"> <span class="font-weight-bold d-block">R$9.00</span> <span>Esfirra e refresco</span>
-                                        <div class="buttons d-flex flex-row">
-                                            <div class="cliente_buttons hidden">
-                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
-                                            </div>
-                                            <div class="vendedor_buttons hidden">
-                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
-                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card p-3">
-                                    <div class="text-center"> <img src="img/sucolaranja.jpg" width="200"> </div>
-                                    <div class="product-details"> <span class="font-weight-bold d-block">R$4.50</span> <span>Suco Natural de Laranja</span>
-                                        <div class="buttons d-flex flex-row">
-                                            <div class="cliente_buttons hidden">
-                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
-                                            </div>
-                                            <div class="vendedor_buttons hidden">
-                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
-                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card p-3">
-                                    <div class="text-center"> <img src="img/cocacola.jpg" width="200"> </div>
-                                    <div class="product-details"> <span class="font-weight-bold d-block">R$5.00</span> <span>Coca Cola</span>
-                                        <div class="buttons d-flex flex-row">
-                                            <div class="cliente_buttons hidden">
-                                                <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block">Adicionar ao carrinho</button>
-                                            </div>
-                                            <div class="vendedor_buttons hidden">
-                                                <button class="btn btn-danger btnExcluirItemCardapio">Excluir</button>
-                                                <button class="btn btn-danger btnEditarItemCardapio">Editar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row g-1 divItems">
+
                         </div>
                         <div class="vendedor_buttons">
                             <button class="btn btn-danger btnAddItem">+</button>

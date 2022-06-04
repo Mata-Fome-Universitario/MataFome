@@ -4,6 +4,11 @@
     margin-left: 680px;
 }
 
+.descricaoSpan {
+    font-weight: 400;
+    color:#989898;
+}
+
 .active {
     color: #e03c3c !important;
     font-weight: 500;
@@ -11,6 +16,26 @@
 
 .textAlert {
     color: red;
+}
+
+#formItem {
+    border: 3px solid black;
+    border-radius: 0.5%;
+    padding: 3%;
+    width: 60%;
+    margin-left: 20%;
+    z-index: 9999;
+    position: fixed;
+    background-color: white;
+}
+
+.modalFade {
+    background-color: rgba(0, 0, 0, 0.575);
+    min-width: 100%;
+    min-height: 400%;
+    z-index: 999;
+    position: fixed;
+    margin-top: -80%;
 }
 
 .hidden {
@@ -71,6 +96,13 @@ body {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #formItem {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
 @media screen and (min-width: 768px){
     .main{
         margin-left: 40%; 
@@ -87,8 +119,6 @@ body {
     .login-form{
         margin-top: 80%;
     }
-
-    
 }
 
 .login-main-text{
