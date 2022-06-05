@@ -16,10 +16,13 @@
     <script src="js/usuarios.js"></script>
     <script src="js/js.js"></script>
 
+    <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
+
+
     <title>Usuários</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
-<body>
+<body id="fundoGeral">
 
 
     <header>
@@ -57,13 +60,48 @@
 
     <main>
 
-        <!--Barra de pesquisa-->
+      <div class="container">
+        <div class="row col-md-8 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Cargo</th>
+                <th class="text-center">Ação</th>
+            </tr>
+        </thead>
+                <tr>
+                    <td>111.111.111-11</td>
+                    <td>Paola Lorrayne</td>
+                    <td>paola@gmail.com</td>
+                    <td>Vendedor</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+                <tr>
+                  <td>333.333.333-33</td>
+                  <td>Isabella Aguiar</td>
+                  <td>isa@gmail.com</td>
+                  <td>Vendedor</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+                <tr>
+                  <td>222.222.222-2</td>
+                  <td>Sávio Cardoso</td>
+                  <td>savio@gmail.com</td>
+                  <td>Gerente</td>
+                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+        </table>
+        <a href="#" class="btn btn-danger btn-xs pull-right"><b>+</b>Adicionar Novo Usuário</a>
 
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-            </div>
-          </nav>
-        
+        </div>
+    </div>
+
+    
+
+      
     </main>
     
 </body>
