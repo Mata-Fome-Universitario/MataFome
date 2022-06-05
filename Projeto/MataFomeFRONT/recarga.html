@@ -16,55 +16,58 @@
     <script src="js/recarga.js"></script>
     <script src="js/js.js"></script>
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
+
+
+
     <title>Recarga</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
-<body>
-
-
+<body id="fundoGeral">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item" id="nav_cardapio">
-                        <a class="nav-link" href="cardapio.html">Cardápio</a>
-                      </li>
-                      <li class="nav-item" id="nav_pedidos">
-                        <a class="nav-link" href="pedido.html">Pedidos</a>
-                      </li>
-                      <li class="nav-item" id="nav_recarga">
-                        <a class="nav-link active" href="recarga.html">Recarga</a>
-                      </li>
-                      <li class="nav-item" id="nav_perfil">
-                        <a class="nav-link" href="perfil.html">Perfil</a>
-                      </li>
-                  <li class="nav-item" id="logout" href="login.html">
-                    <a class="nav-link" href="login.html">Sair</a>
-                  </li>
-                  
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item" id="nav_cardapio">
+                <a class="nav-link" href="cardapio.html">Cardápio</a>
+              </li>
+              <li class="nav-item" id="nav_pedidos">
+                <a class="nav-link" href="pedido.html">Pedidos</a>
+              </li>
+              <li class="nav-item" id="nav_recarga">
+                <a class="nav-link active" href="recarga.html">Recarga</a>
+              </li>
+              <li class="nav-item" id="nav_perfil">
+                <a class="nav-link" href="perfil.html">Perfil</a>
+              </li>
+               <li class="nav-item" id="logout" href="login.html">
+                <a class="nav-link" href="login.html">Sair</a>
+              </li>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
 
     </header>
 
-    <main>
-
+    <main class="recarga">
         <!--Barra de pesquisa-->
-
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
               <form class="d-flex">
@@ -73,7 +76,61 @@
               </form>
             </div>
           </nav>
-        
+          <h1>Digite aqui o CPF do usuário que deseja realizar a recarga:</h1>          
+          <input id="inputRecargaCPF" type="text" name="input" value="">
+          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger center-block"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+          <!-- Modal Dados-->
+          <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="titleNomeUsuario">Bryan Reges</h3>
+              </div>
+              <div class="modal-body">
+                <table class="table table-user-information" id="tabela">
+                  <tbody>
+                    <tr>
+                      <td>CPF</td>
+                      <td id="recarga_cpf">000.555.333-11</td>
+                    </tr>
+                    <tr>
+                      <td>Nome</td>
+                      <td id="recarga_nome">Bryan Reges</td>
+                    </tr>
+                    <tr>
+                      <td>E-mail</td>
+                      <td id="recarga_email">bryan@pucminas.com</td>
+                    </tr>
+                  </tbody>
+                </table>
+    
+              <!-- Modal Recarga-->
+              <div class="form-group">
+                <label class="col-sm-2 control-label" for="textinput">Saldo</label>
+                <div class="col-sm-4">
+                  <p>R$0,00</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                <label class="col-sm-2 control-label" for="textinput">Valor</label>
+                <div class="col-sm-4">
+                  <input type="text" placeholder="R$" class="form-control">
+                </div>
+              </div>
+            </div>
+    
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <div class="pull-right">
+                    <button type="submit" class="btn btn-default">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Adicionar Saldo</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
     </main>
     
 </body>

@@ -1,3 +1,14 @@
+/*backgroud geral*/
+
+#fundoGeral {
+    background-color: #F5EBDC;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: black;
+}
+
 /*menu*/
 
 #saldo {
@@ -10,7 +21,7 @@
 }
 
 .active {
-    color: #e03c3c !important;
+    color: #D62300 !important;
     font-weight: 500;
 }
 
@@ -57,11 +68,6 @@
     display: block;
     margin-top: 20px;
 }
-
-body {
-    font-family: "Lato", sans-serif;
-}
-
 
 
 .main-head{
@@ -166,14 +172,14 @@ body {
 
 /*FINAL CADASTRO*/
 
-/*INICIO CARDAPIO*/
 
+/*INICIO CARDAPIO*/
 
 .page_title {
     padding: 30px 0px;
 }
 .page_title h1 {
-    color: #c0392b;
+    color: #783c00;
     font-weight: 700;
     line-height: 2;
     margin-bottom: 0;
@@ -181,7 +187,7 @@ body {
     text-transform: capitalize;
 }
 .page_title h1::before {
-    background: #c0392b;
+    background: #783c00;
     width: 70px;
     height: 2px;
     position: absolute;
@@ -200,12 +206,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-body {
-    background: #eee
-}
 
 .wrapper {
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .wrapper span {
@@ -215,16 +218,16 @@ body {
 
 .card {
     border: 1px solid #eee;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .weight {
     margin-top: -65px;
-    transition: all 0.5s
+    transition: all 0.5s;
 }
 
 .weight small {
-    color: #e2dede
+    color: #e2dede;
 }
 
 .buttons {
@@ -234,7 +237,7 @@ body {
     position: relative;
     margin-top: 7px;
     opacity: 0;
-    transition: all 0.8s
+    transition: all 0.8s;
 }
 
 .dot {
@@ -253,11 +256,11 @@ body {
 }
 
 .cart-button {
-    height: 50px
+    height: 50px;
 }
 
 .cart-button:focus {
-    box-shadow: none
+    box-shadow: none;
 }
 
 .cart {
@@ -273,57 +276,57 @@ body {
     border-radius: 5px;
     font-size: 14px;
     transition: 1s ease-in-out;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .cart-button.clicked span.dot {
-    animation: item 0.3s ease-in forwards
+    animation: item 0.3s ease-in forwards;
 }
 
 @keyframes item {
     0% {
         opacity: 1;
         top: 30%;
-        left: 30%
+        left: 30%;
     }
 
     25% {
         opacity: 1;
         left: 26%;
-        top: 0%
+        top: 0%;
     }
 
     50% {
         opacity: 1;
         left: 23%;
-        top: -22%
+        top: -22%;
     }
 
     75% {
         opacity: 1;
         left: 19%;
-        top: -18%
+        top: -18%;
     }
 
     100% {
         opacity: 1;
         left: 14%;
-        top: 28%
+        top: 28%;
     }
 }
 
 .card:hover .buttons {
-    opacity: 1
+    opacity: 1;
 }
 
 .card:hover .weight {
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .card:hover {
     transform: scale(1.04);
     z-index: 2;
-    overflow: hidden
+    overflow: hidden;
 }
 
 .card img {
@@ -356,7 +359,7 @@ body {
 }
 
 .card-body {
-    background-color: #e03c3c;
+    background-color: #D62300;
 }
 
 .card-body p {
@@ -371,22 +374,23 @@ body {
     color:#FFF;
     font-size: 20px;
     font-weight: 300;
-    border-bottom: 1px dashed #c0392b;
+    border-bottom: 1px dashed #D62300;
     line-height: 2;
     text-transform: capitalize;
 }
 
 .promocao h3 {
-    color: #ee301b;
+    color: #783c00;
     font-weight: 700;
     line-height: 2;
     margin-bottom: 0;
     position: relative;
     text-transform: capitalize;
+    font-weight: bold;
 }
 
 .promocao h5 {
-    color:#FFF
+    color:#FFF;
 }
 
 /*FINAL PRATO DO DIA*/
@@ -493,7 +497,7 @@ body {
 .total {
 	font-size: 24px;
 	font-weight: 600;
-	color: #c0392b;
+	color: #D62300;
 }
 .display-flex {
 	display: flex;
@@ -525,7 +529,7 @@ input:focus {
 }
 .round-black-btn {
 	border-radius: 25px;
-    background: #c0392b;
+    background: #D62300;
     color: #fff;
     padding: 8px 35px;
     display: inline-block;
@@ -546,9 +550,9 @@ input:focus {
 }
 .cart-totals h3 {
 	font-size: 19px;
-    color: #c0392b;
+    color: #783c00;
     letter-spacing: 1px;
-    font-weight: 500;
+    font-weight: bold;
 }
 .cart-totals table {
 	width: 100%;
@@ -576,7 +580,7 @@ input:focus {
 .cart-totals table tr td.price-total {   
 	font-size: 24px;
     font-weight: 600;
-    color: #c0392b;
+    color: #D62300;
 }
 .btn-cart-totals {
 	text-align: center;
@@ -637,15 +641,22 @@ input:focus {
 
 /*Pedido*/
 
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
-        .MultiCarousel .MultiCarousel-inner .item { float: left;}
-        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-    .MultiCarousel .leftLst { left:0; }
-    .MultiCarousel .rightLst { right:0; }
-    
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+.MultiCarousel { 
+    float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
+.MultiCarousel .MultiCarousel-inner { 
+    transition: 1s ease all; float: left; }
+.MultiCarousel .MultiCarousel-inner .item { 
+    float: left;}
+.MultiCarousel .MultiCarousel-inner .item > div { 
+    text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+    position:absolute; border-radius:50%;top:calc(50% - 20px); }
+.MultiCarousel .leftLst { 
+    left:0; }
+.MultiCarousel .rightLst { 
+    right:0; }
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { 
+    pointer-events: none; background:#ccc; }
 
 /*Fim do pedido*/
 
@@ -677,3 +688,54 @@ input:focus {
 }
 
 /*Fim Modal*/
+
+/*Recarga*/
+.recarga h1 {
+    font-size: 1em;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#inputRecargaCPF {
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 3px;
+}
+
+/*Modal Recarga*/
+
+
+.modal-header {
+	padding-bottom: 5px;
+}
+
+.modal-footer {
+    	padding: 0;
+	}
+    
+.modal-footer .btn-group button {
+	height:40px;
+	border-top-left-radius : 0;
+	border-top-right-radius : 0;
+	border: none;
+	border-right: 1px solid #ddd;
+}
+	
+.modal-footer .btn-group:last-child > button {
+	border-right: 0;
+}
+
+/*Usuarios*/
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+
+    
