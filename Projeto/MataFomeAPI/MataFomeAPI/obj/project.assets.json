@@ -5805,19 +5805,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Paola\\.nuget\\packages\\": {}
+    "C:\\Users\\savin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Estudos\\PUC\\Matafome\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+      "projectUniqueName": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
       "projectName": "MataFomeAPI",
-      "projectPath": "G:\\Estudos\\PUC\\Matafome\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
-      "packagesPath": "C:\\Users\\Paola\\.nuget\\packages\\",
-      "outputPath": "G:\\Estudos\\PUC\\Matafome\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
+      "projectPath": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\MataFomeAPI.csproj",
+      "packagesPath": "C:\\Users\\savin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\savin\\Desktop\\PUC\\Trabalho Interdisciplinar\\MataFome\\Projeto\\MataFomeAPI\\MataFomeAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Paola\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\savin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
