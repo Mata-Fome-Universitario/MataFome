@@ -29,14 +29,16 @@ namespace MataFomeAPI
             services.AddDbContextPool<AppDbContext>(options =>
                         options.UseMySql(mysqlConnection,
                                     ServerVersion.AutoDetect(mysqlConnection)));
+            string[] methods = { "POST", "PUT", "GET", "DELETE", "OPTIONS" };
 
             services.AddCors(options =>
             {
                 options.AddPolicy(name: MyAllowSpecificOrigins,
                                   policy =>
                                   {
-                                      policy.WithOrigins("*")
-                                      .AllowAnyHeader();
+                                  policy.WithOrigins("*")
+                                  .AllowAnyHeader()
+                                  .WithMethods(methods);
                                   });
             });
 

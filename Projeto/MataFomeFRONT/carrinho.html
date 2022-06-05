@@ -70,6 +70,41 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<div class="cart-wrap">
 		<div class="container">
+
+			<div class="hidden">
+				<!-- <div id="000" class="itemCarrinho">
+					<td>
+						<div class="display-flex align-center">
+							<div class="img-product">
+								<img src="img/cocacola.jpg" alt="" class="imageItemCarrinho">
+							</div>
+							<div class="name-product">
+								Coca Cola
+							</div>
+							<div class="price">
+								R$5.00
+							</div>
+						</div>
+					</td>
+					<td class="product-count">
+						<form action="#" class="count-inlineflex">
+							<div class="qtyminus">-</div>
+							<input type="text" name="quantity" value="1" class="qty">
+							<div class="qtyplus">+</div>
+						</form>
+					</td>
+					<td>
+						<div class="total">
+							R$5.00
+						</div>
+					</td>
+				</div> -->
+
+				<div id="carrinhoVazio">
+					<h3>Carrinho vazio!</h3>
+				</div>
+			</div>
+
 	        <div class="row">
 			    <div class="col-lg-8">
 			        <div class="main-heading">Carrinho</div>
@@ -84,71 +119,34 @@
 	                            </tr>
 	                        </thead>
 	                        <tbody>
-	                            <tr>
-	                                <td>
-	                                	<div class="display-flex align-center">
-		                                    <div class="img-product">
-		                                        <img src="img/cocacola.jpg" alt="" class="mCS_img_loaded">
-		                                    </div>
-		                                    <div class="name-product">
-		                                        Coca Cola
-		                                        <br>R155
-		                                    </div>
-		                                    <div class="price">
-		                                        R$5.00
-		                                    </div>
-	                                    </div>
-	                                </td>
-	                                <td class="product-count">
-	                                    <form action="#" class="count-inlineflex">
-										    <div class="qtyminus">-</div>
-										    <input type="text" name="quantity" value="1" class="qty">
-										    <div class="qtyplus">+</div>
-										</form>
-	                                </td>
-	                                <td>
-	                                    <div class="total">
-	                                        R$5.00
-	                                    </div>
-	                                </td>
-	                                <td>
-	                                    <a href="#" title="">
-	                                        <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
-	                                    </a>
-	                                </td>
-	                            </tr>
-	                            <tr>
-	                                <td>
-	                                	<div class="display-flex align-center">
-		                                    <div class="img-product">
-		                                        <img src="img/salgado.webp" alt="" class="mCS_img_loaded">
-		                                    </div>
-		                                    <div class="name-product">
-		                                        Salgado e refresco
-		                                        <br>SR265
-		                                    </div>
-		                                    <div class="price">
-		                                        R$7.50
-		                                    </div>
-	                                    </div>
-	                                </td>
-	                                <td class="product-count">
-	                                    <form action="#" class="count-inlineflex">
-										    <div class="qtyminus">-</div>
-										    <input type="text" name="quantity" value="1" class="qty">
-										    <div class="qtyplus">+</div>
-										</form>
-	                                </td>
-	                                <td>
-	                                    <div class="total">
-	                                        R$7.50
-	                                    </div>
-	                                </td>
-	                                <td>
-	                                    <a href="#" title="">
-	                                        <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
-	                                    </a>
-	                                </td>
+	                            <tr id="tabelaCarrinho">
+									<div id="000" class="itemCarrinho">
+										<td>
+											<div class="display-flex align-center">
+												<div class="img-product">
+													<img src="img/cocacola.jpg" alt="" class="imageItemCarrinho">
+												</div>
+												<div class="name-product">
+													Coca Cola
+												</div>
+												<div class="price">
+													R$5.00
+												</div>
+											</div>
+										</td>
+										<td class="product-count">
+											<form action="#" class="count-inlineflex">
+												<div class="qtyminus">-</div>
+												<input type="text" name="quantity" value="1" class="qty">
+												<div class="qtyplus">+</div>
+											</form>
+										</td>
+										<td>
+											<div class="total">
+												R$5.00
+											</div>
+										</td>
+									</div>
 	                            </tr>
 	                        </tbody>
 	                    </table>
@@ -162,17 +160,9 @@
 			            <form action="#" method="get" accept-charset="utf-8">
 			                <table>
 			                    <tbody>
-			                        <tr>
-			                            <td>Subtotal</td>
-			                            <td class="subtotal">R$12.50</td>
-			                        </tr>
-			                        <tr>
-			                            <td>Taxa de Serviço</td>
-			                            <td class="free-shipping">Isento</td>
-			                        </tr>
 			                        <tr class="total-row">
 			                            <td>Total</td>
-			                            <td class="price-total">R$12.50</td>
+			                            <td class="price-total">R$0.00</td>
 			                        </tr>
 			                    </tbody>
 			                </table>
