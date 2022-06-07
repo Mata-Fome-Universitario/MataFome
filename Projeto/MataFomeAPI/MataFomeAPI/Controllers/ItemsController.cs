@@ -51,6 +51,9 @@ namespace MataFomeAPI.Controllers
                 return BadRequest();
             }
 
+            if (item.Imagem == null)
+                item.Imagem = "";
+
             _context.Entry(item).State = EntityState.Modified;
 
             try
@@ -75,12 +78,16 @@ namespace MataFomeAPI.Controllers
         // POST: api/Items
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Item>> PostItem(string nome, string descricao, double preco, string? imagem)
+        public async Task<ActionResult<Item>> PostItem(string nome, string descricao, double preco, [FromBody] string? imagem)
         {
             Item item = new Item();
             item.Nome = nome;
-            item.Descricao = descricao;
             item.Preco = preco;
+
+            if (descricao != null)
+                item.Descricao = descricao;
+            else
+                item.Descricao = "";
 
             if (imagem != null)
                 item.Imagem = imagem;
