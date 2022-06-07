@@ -35,4 +35,3 @@ $(document).ready ( function () {
         $(".modalFade").addClass("hidden");
     });
 });
-});

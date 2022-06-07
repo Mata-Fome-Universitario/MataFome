@@ -114,6 +114,7 @@ namespace MataFomeAPI.Controllers
                     {
                         user.Saldo += total;
                         _context.Usuarios.Update(user);
+                        await _context.SaveChangesAsync();
                     }
                 }
             }
