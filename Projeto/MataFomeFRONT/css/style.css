@@ -802,4 +802,12 @@ input:focus {
     transition: 0.5s;
     }
 
+#btnUser {
+    padding: 5px;
+    margin: 15px;
+}
+
+
+
+
     

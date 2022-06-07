@@ -16,6 +16,10 @@
     <script src="js/usuarios.js"></script>
     <script src="js/js.js"></script>
 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
 
 
@@ -23,8 +27,6 @@
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
 <body id="fundoGeral">
-
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -54,12 +56,8 @@
               </div>
             </div>
           </nav>
-
-
     </header>
-
     <main>
-
       <div class="container">
         <div class="row col-md-8 col-md-offset-2 custyle">
         <table class="table table-striped custab">
@@ -94,14 +92,51 @@
                     <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
                 </tr>
         </table>
-        <a href="#" class="btn btn-danger btn-xs pull-right"><b>+</b>Adicionar Novo Usuário</a>
-
+        <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger"><i class="fa-solid fa-circle-plus"></i> Adicionar Usuário</button>
+        <!-- Modal adicionar usuário -->
+        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">Close</span></button>
+              <h3 class="modal-title" id="lineModalLabel">Dados do Usuário</h3>
+            </div>
+            <div class="modal-body">
+        <!-- Formulário do Modal -->
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputNome1">CPF</label>
+                  <input type="cpf" class="form-control"placeholder="CPF">
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Nome</label>
+                    <input type="nome" class="form-control" placeholder="Nome">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputCPF1">E-mail</label>
+                    <input type="email" class="form-control" placeholder="E-mail">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Cargo</label>
+                    <input type="cargo" class="form-control" placeholder="Cargo">
+                  </div>
+              </form>
+            </div>
+            <!--Footer Modal-->
+            <div class="modal-footer">
+              <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Cancelar</button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    
-
-      
     </main>
     
 </body>
