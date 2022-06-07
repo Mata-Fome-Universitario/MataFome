@@ -15,16 +15,17 @@
     <script src="js/perfil.js"></script>
     <script src="js/js.js"></script>
 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 
     <title>Perfil</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 
 </head>
 <body id="fundoGeral">
-
-
     <header>
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
@@ -57,7 +58,6 @@
                   <li class="nav-item" id="logout" href="login.html">
                     <a class="nav-link" href="login.html">Sair</a>
                   </li>
-                  
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item" href="#">Action</a></li>
                       <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -68,37 +68,19 @@
               </div>
             </div>
           </nav>
-
-
     </header>
-
     <main >
-
         <div class="container" >
             <div class="row">
             <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
               </div>
               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
-                <div class="panel panel-info">
+                <div class="panel panel-danger">
                   <div class="panel-heading">
                     <h3 class="panel-title" id="perfil_title">Bryan Reges</h3>
                   </div>
                   <div class="panel-body">
                     <div class="row">
-                      <!-- <div class="col-md-4 col-lg-4 "> <img alt="User Pic" src="img/people-and-lifestyle-concept-attractive-young-caucasian-male-in-good-mood-in-blue-long-sleeved-shirt-smiling-cheerfully-showing-perfect-white-teeth-happy-with-positive-news-keeping-arms-folded.jpg" class="img-circle img-responsive"> </div> -->
-                      
-                      <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                        <dl>
-                          <dt>DEPARTMENT:</dt>
-                          <dd>Administrator</dd>
-                          <dt>HIRE DATE</dt>
-                          <dd>11/12/2013</dd>
-                          <dt>DATE OF BIRTH</dt>
-                             <dd>11/12/2013</dd>
-                          <dt>GENDER</dt>
-                          <dd>Male</dd>
-                        </dl>
-                      </div>-->
                       <div class=" col-md-9 col-lg-9 "> 
                         <table class="table table-user-information" id="tabela">
                           <tbody>
@@ -124,7 +106,7 @@
                           <button data-toggle="modal" data-target="#changePasswordModal" class="btn btn-danger">Alterar Senha</button>
                           <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger">Editar Perfil</button>
                         </div>
-                        <!-- line modal -->
+                        <!-- Modal editar perfil -->
                         <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                           <div class="modal-dialog">
                           <div class="modal-content">
@@ -133,8 +115,7 @@
                               <h3 class="modal-title" id="lineModalLabel">Editar Perfil</h3>
                             </div>
                             <div class="modal-body">
-                              
-                                    <!-- content goes here -->
+                        <!-- Formulário do Modal -->
                               <form>
                                 <div class="form-group">
                                   <label for="exampleInputNome1">Nome Completo</label>
@@ -153,8 +134,8 @@
                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                                   </div>
                               </form>
-
                             </div>
+                            <!--Footer Modal-->
                             <div class="modal-footer">
                               <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                                 <div class="btn-group" role="group">
@@ -175,14 +156,7 @@
             </div>
           </div>
         </div>
-
-          
-
-
-
     </main>
-
-
     <footer>
 
     </footer>

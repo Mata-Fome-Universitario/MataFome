@@ -25,3 +25,4 @@ $(document).ready ( function () {
         return money.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
 });
+
