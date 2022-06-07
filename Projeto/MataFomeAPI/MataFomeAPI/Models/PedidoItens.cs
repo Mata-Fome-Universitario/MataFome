@@ -5,6 +5,9 @@ namespace MataFomeAPI.Models
 {
     public class PedidoItens
     {
+        [Required, Key]
+        public int Id { get; set; }
+
         [Required]
         public int Codigo_Pedido { get; set; }
 
@@ -16,8 +19,6 @@ namespace MataFomeAPI.Models
 
         [Required]
         public double Total { get; set; }
-
-
 
 
         [NotMapped]

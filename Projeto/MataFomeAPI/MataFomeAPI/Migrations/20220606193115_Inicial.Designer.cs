@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MataFomeAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220603000209_Inicial")]
+    [Migration("20220606193115_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,6 +64,10 @@ namespace MataFomeAPI.Migrations
 
             modelBuilder.Entity("MataFomeAPI.Models.PedidoItens", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     b.Property<int>("Codigo_Item")
                         .HasColumnType("int");
 
@@ -76,6 +80,8 @@ namespace MataFomeAPI.Migrations
                     b.Property<double>("Total")
                         .HasPrecision(10, 2)
                         .HasColumnType("double");
+
+                    b.HasKey("Id");
 
                     b.ToTable("PedidoItens");
                 });

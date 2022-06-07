@@ -12,7 +12,6 @@
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery/jquery-1.11.1.min.js"></script>
     <script src="jquery/jquery.min.js"></script>
-    <script src="/path/to/js.cookie.js"></script>
     <script src="js/pedido.js"></script>
     <script src="js/js.js"></script>
 
@@ -20,8 +19,6 @@
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
 <body id="fundoGeral">
-
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -66,106 +63,45 @@
               </div>
             </div>
           </nav>
-
-
     </header>
 
-    <main>
+    <div class="hidden">
 
-        <!--Barra de pesquisa-->
-
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-                <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
-              </form>
+      <div id="000" class="col-md-3 cardPedido">
+        <div class="card p-3">
+          <span class="font-weight-bold d-block codigoSpan">Código - HRD#212</span>
+          <br>
+          <span class="font-weight-bold">Cliente:</span>
+          <span class="nomeSpan">Sávio Cardoso</span>
+          <br>
+          <span class="font-weight-bold itensTitle">Itens:</span>
+          <br>
+          <span class="font-weight-bold">Total:</span>
+          <span class="totalSpan">R$ 11,50</span>
+          <br>
+          <span class="font-weight-bold">Status:</span>
+          <span class="statusSpan">PENDENTE</span>
+          <br>
+          <div class="buttons d-flex flex-row">
+            <div class="vendedor_buttons hidden">
+              <button type="button" class="btn btn-light btnCancelarPedido">Cancelar</button>
+              <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
             </div>
-          </nav>
-        
-          <!--Codigos de pedido-->
-        <div class="container">
-            <div class="row">
-                <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
-                    <div class="MultiCarousel-inner">
-                        <div class="item">
-                            <div class="pad15">
-                                <p class="lead">Código - HRD#212</p>
-                                <p>Detalhes</p>
-                                <p>Esfirra e refresco</p>
-                                <p>R$9.00</p>
-                                <div class="vendedor_buttons">
-                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
-                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p class="lead">Código - GHR#458</p>
-                                <p>Detalhes</p>
-                                <p>Coca Cola e Suco Natural de Laranja</p>
-                                <p>R$9.50</p>
-                                <div class="vendedor_buttons">
-                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
-                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p class="lead">Código - PLÇ#037</p>
-                                <p>Detalhes</p>
-                                <p id="suco">Suco Natural de Laranja</p>
-                                <p>R$4.50</p>
-                                <div class="vendedor_buttons">
-                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
-                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p class="lead">Código - LDP#058</p>
-                                <p>Detalhes</p>
-                                <p>Coca Cola</p>
-                                <p>R$5.00</p>
-                                <div class="vendedor_buttons">
-                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
-                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="pad15">
-                                <p class="lead">Código - GRT#359</p>
-                                <p>Detalhes</p>
-                                <p>Salgado e refresco</p>
-                                <p>R$7.50</p>
-                                <div class="vendedor_buttons">
-                                  <button type="button" class="btn btn-light btnCancelarPedidp">Cancelar</button>
-                                  <button type="button" class="btn btn-danger btnEntregar">Entregar</button>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                        
-                    </div>
-                    <button class="btn btn-danger leftLst"><</button>
-                    <button class="btn btn-danger rightLst">></button>
-                </div>
-            </div>
-            </div>
+          </div>
         </div>
+      </div>
 
+      <h3 class="pedidoVazio">Nenhum pedido disponível no momento.</h3>
+
+    </div>
+
+    <main>
+      <!--Codigos de pedido-->
+      <div class="container">
+        <div id="pedidosContainer" class="row">
+
+        </div>
+      </div>
     </main>
-
-
-    <footer>
-      
-
-    </footer>
-    
 </body>
 </html>

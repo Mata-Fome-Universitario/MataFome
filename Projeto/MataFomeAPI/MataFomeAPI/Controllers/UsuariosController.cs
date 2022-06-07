@@ -28,7 +28,7 @@ namespace MataFomeAPI.Controllers
         }
 
         [HttpGet("{cpf}")]
-        public async Task<ActionResult<Usuario>> GetUsuario(long cpf)
+        public async Task<ActionResult<Usuario>> GetUsuario(string cpf)
         {
             var usuario = await _context.Usuarios.FindAsync(cpf);
 

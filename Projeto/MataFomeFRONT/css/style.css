@@ -11,6 +11,10 @@ body {
 
 /*menu*/
 
+.round-black-btn {
+    color: white !important;
+}
+
 #saldo {
     margin-left: 680px;
 }
@@ -40,6 +44,49 @@ body {
     background-color: white;
 }
 
+.container {
+    margin-top: 3% !important;
+}
+
+.btnCancelarPedido {
+    min-width: 125%;
+}
+
+.btnAddItem {
+    margin-top: 5%;
+    margin-left: 49%;
+    font-weight: bold !important;
+    font-size: 30px !important;
+    border-radius: 50% !important;
+    min-width: 5.5%;
+}
+
+.btnEntregar {
+    min-width: 125%;
+    margin-top: 5%;
+}
+
+.pendente {
+    color: orange;
+}
+
+.cancelado {
+    color: red;
+}
+
+.entregue {
+    color: green;
+}
+
+.statusSpan {
+    font-weight: bold;
+}
+
+.codigoSpan {
+    text-align: center;
+    font-size: larger;
+}
+
 .modalFade {
     background-color: rgba(0, 0, 0, 0.575);
     min-width: 100%;
@@ -47,6 +94,23 @@ body {
     z-index: 999;
     position: fixed;
     margin-top: -80%;
+}
+
+.alertTitle {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.alertMessage {
+    text-align: center;
+}
+
+#btn-ok-alert {
+    min-width: 15%;
+    margin-left: 42.5%;
+    align-self: center;
+    margin-top: 4%;
 }
 
 .hidden {
