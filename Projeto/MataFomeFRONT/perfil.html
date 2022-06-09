@@ -14,6 +14,8 @@
     <script src="jquery/js.cookie.min.js"></script>
     <script src="js/perfil.js"></script>
     <script src="js/js.js"></script>
+    <link href="bootstrap/bootstrap-3.1.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="bootstrap/bootstrap-3.1.min.js"></script>
 
 
 
@@ -100,8 +102,8 @@
                           </tbody>
                         </table>
                         <div class="center">
-                          <button data-toggle="modal" data-target="#changePasswordModal" class="btn btn-danger">Alterar Senha</button>
-                          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger">Editar Perfil</button>
+                          <button id="changePasswordBtn" data-toggle="modal" data-target="#changePasswordModal" class="btn btn-danger">Alterar Senha</button>
+                          <button id="editarPerfilBtn" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger">Editar Perfil</button>
                         </div>
                         <!-- Modal editar perfil -->
                         <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -116,19 +118,22 @@
                               <form>
                                 <div class="form-group">
                                   <label for="exampleInputNome1">Nome Completo</label>
-                                  <input type="name" class="form-control" id="exampleInputNome1" placeholder="Digite seu nome">
+                                  <input type="name" class="form-control" id="inputNome" placeholder="Digite seu nome">
+                                  <span id="alertPerfilNome" class="textAlert hidden">Nome não pode ser vazio!</span>
                                 </div>
                                   <div class="form-group">
                                     <label for="exampleInputEmail1">E-mail</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Digite seu e-mail">
+                                    <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu e-mail">
+                                    <span id="alertPerfilEmailEmpty" class="textAlert hidden">Email não pode ser vazio!</span>
+                                    <span id="alertPerfilEmailExist" class="textAlert hidden">Já existe um cadastro ativo com esse email!</span>
+                                    <span id="alertPerfilEmailInvalid" class="textAlert hidden">Email inválido!</span>
                                   </div>
                                   <div class="form-group">
                                     <label for="exampleInputCPF1">CPF</label>
-                                    <input type="text" class="form-control" id="exampleInputCPF1" placeholder="Digite seu cpf">
-                                  </div>
-                                  <div class="form-group">
-                                    <label for="exampleInputPassword1">Senha</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                                    <input type="text" class="form-control" id="inputCPF" placeholder="Digite seu cpf" maxlength="14" onkeyup="mascara_cpf()">
+                                    <span id="alertPerfilCPFEmpty" class="textAlert hidden">CPF não pode ser vazio!</span>
+                                    <span id="alertPerfilCPFInvalid" class="textAlert hidden">CPF Inválido!</span>
+                                    <span id="alertPerfilCPFExist" class="textAlert hidden">Já existe um cadastro ativo com esse CPF!</span>
                                   </div>
                               </form>
                             </div>
@@ -139,7 +144,7 @@
                                   <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Cancelar</button>
                                 </div>
                                 <div class="btn-group" role="group">
-                                  <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
+                                  <button type="button" id="saveUserUpdate" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
                                 </div>
                               </div>
                             </div>
@@ -161,15 +166,18 @@
                             <form>
                               <div class="form-group">
                                 <label for="exampleInputNome1">Senha</label>
-                                <input type="password" class="form-control" placeholder="Digite sua senha atual">
+                                <input id="inputOldPassword" type="password" class="form-control" placeholder="Digite sua senha atual">
+                                <span id="alertPerfilOldPassword" class="textAlert hidden">Senha incorreta!</span>
                               </div>
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Nova Senha</label>
-                                  <input type="password" class="form-control" placeholder="Digite sua nova senha">
+                                  <input id="inputNewPassword" type="password" class="form-control" placeholder="Digite sua nova senha">
+                                  <span id="alertPerfilNewPassword" class="textAlert hidden">Senha não pode ser vazia!</span>
                                 </div>
                                 <div class="form-group">
                                   <label for="exampleInputCPF1">Confirmar nova senha</label>
-                                  <input type="password" class="form-control" placeholder="Confirme a senha">
+                                  <input id="inputNewPasswordConfirm" type="password" class="form-control" placeholder="Confirme a senha">
+                                  <span id="alertPerfilNewPasswordConfirm" class="textAlert hidden">As senhas não coincidem!</span>
                                 </div>   
                             </form>
                           </div>
@@ -180,7 +188,7 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Cancelar</button>
                               </div>
                               <div class="btn-group" role="group">
-                                <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
+                                <button type="button" id="saveChangePassword" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
                               </div>
                             </div>
                           </div>

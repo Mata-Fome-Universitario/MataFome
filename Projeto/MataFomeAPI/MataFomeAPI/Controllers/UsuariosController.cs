@@ -45,7 +45,7 @@ namespace MataFomeAPI.Controllers
         {
             try
             {
-                Usuario oldUser = _context.Usuarios.Where(x => x.CPF == cpf).FirstOrDefault();
+                Usuario oldUser = _context.Usuarios.Where(x => x.CPF == cpf).AsNoTracking().FirstOrDefault();
                 if (string.IsNullOrEmpty(usuario.Nome))
                     usuario.Nome = oldUser.Nome;
 
@@ -58,8 +58,19 @@ namespace MataFomeAPI.Controllers
                 usuario.Senha = oldUser.Senha;
                 usuario.Saldo = oldUser.Saldo;
 
+                Usuario newUser = _context.Usuarios.Where(x => x.Email == usuario.Email).AsNoTracking().FirstOrDefault();
+
+                if (newUser != null)
+                {
+                    if (newUser.CPF != oldUser.CPF)
+                        return Ok("Já existe um usuário cadastrado com esse Email");
+                }
+
                 if (!string.IsNullOrWhiteSpace(usuario.CPF) && usuario.CPF != cpf)
                 {
+                    if (_context.Usuarios.Where(x => x.CPF == usuario.CPF).Any())
+                        return Ok("Já existe um usuário cadastrado com esse CPF");
+
                     _context.Usuarios.Remove(oldUser);
                     await _context.SaveChangesAsync();
 
@@ -71,6 +82,9 @@ namespace MataFomeAPI.Controllers
                     _context.Entry(usuario).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                 }
+
+                usuario.Senha = "*****";
+                return Ok(usuario);
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -132,6 +146,23 @@ namespace MataFomeAPI.Controllers
                 usuario.Senha = "****";
                 return Ok(usuario);
             }
+        }
+
+        [Route("changePassword"), HttpPost]
+        public async Task<ActionResult<Usuario>> ChangePassword(string cpf, string oldPassword, string newPassword)
+        {
+            Usuario usuario = _context.Usuarios.Where(x => x.CPF == cpf).FirstOrDefault();
+
+            if (usuario == null)
+                return Ok("Usuário não existe");
+
+            if (usuario.Senha != oldPassword)
+                return Ok("Senha incorreta");
+
+            usuario.Senha = newPassword;
+            _context.Entry(usuario).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return Ok("Senha alterada com sucesso");
         }
 
         private bool CpfExists(string cpf)
