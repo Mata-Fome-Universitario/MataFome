@@ -55,8 +55,10 @@ namespace MataFomeAPI.Controllers
                 if (!ValidateRole(usuario.Cargo))
                     usuario.Cargo = oldUser.Cargo;
 
+                if (double.IsNaN(usuario.Saldo))
+                    usuario.Saldo = oldUser.Saldo;
+
                 usuario.Senha = oldUser.Senha;
-                usuario.Saldo = oldUser.Saldo;
 
                 Usuario newUser = _context.Usuarios.Where(x => x.Email == usuario.Email).AsNoTracking().FirstOrDefault();
 
