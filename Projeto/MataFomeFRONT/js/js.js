@@ -24,5 +24,14 @@ $(document).ready ( function () {
     function formatMoney(money) {
         return money.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
-});
 
+    $("#btn-ok-alert").click(function() {
+        $("#formItem").addClass("hidden");
+        $(".modalFade").addClass("hidden");
+    });
+
+    $(document).on('click', ".modalFade", function() { 
+        $("#formItem").addClass("hidden");
+        $(".modalFade").addClass("hidden");
+    });
+});

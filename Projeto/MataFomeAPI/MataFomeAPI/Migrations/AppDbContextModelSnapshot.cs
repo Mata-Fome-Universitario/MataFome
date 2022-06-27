@@ -62,6 +62,10 @@ namespace MataFomeAPI.Migrations
 
             modelBuilder.Entity("MataFomeAPI.Models.PedidoItens", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     b.Property<int>("Codigo_Item")
                         .HasColumnType("int");
 
@@ -74,6 +78,8 @@ namespace MataFomeAPI.Migrations
                     b.Property<double>("Total")
                         .HasPrecision(10, 2)
                         .HasColumnType("double");
+
+                    b.HasKey("Id");
 
                     b.ToTable("PedidoItens");
                 });

@@ -32,17 +32,23 @@ $(document).ready(function () {
                 });
 
                 $(".price-total").text(formatMoney(total));
+                $("#finalizarPedido").removeClass("hidden");
+                $("#clearCartBtn").removeClass("hidden");
             }
             else {
                 let carrinhoVazio = $("#carrinhoVazio").clone();
                 $("#tabelaItems").html(carrinhoVazio);
                 $(".price-total").text(formatMoney(0));
+                $("#finalizarPedido").addClass("hidden");
+                $("#clearCartBtn").addClass("hidden");
             }
         }
         else {
             let carrinhoVazio = $("#carrinhoVazio").clone();
             $("#tabelaItems").html(carrinhoVazio);
             $(".price-total").text(formatMoney(0));
+            $("#finalizarPedido").addClass("hidden");
+            $("#clearCartBtn").addClass("hidden");
         }
     }
 
@@ -123,5 +129,90 @@ $(document).ready(function () {
 
     function formatMoney(money) {
         return money.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
+
+    $("#finalizarPedido").click(function() {
+        let itensArray = JSON.parse(window.localStorage.getItem('itensCarrinho'));
+        let total = 0;
+
+        itensArray.forEach(element => {
+            total += element.preco * element.quantidade
+        });
+
+        let pedido = {
+            "cpF_Usuario": usuario.cpf,
+            "status": 0,
+            "total": total
+        }
+
+        $.ajax({
+            url: route + "Pedidos",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(pedido),
+        }).done(function (server_response) {
+            if(server_response == "Usuário não encontrado") {
+                //ALERT INCONSISTENCIA NOS DADOS DO USUÁRIO, E PEDE PRA LOGAR DNV
+            }
+            else if(server_response == "Saldo insuficiente") {
+                $("#formItem").removeClass("hidden");
+                $(".modalFade").removeClass("hidden");
+            }
+            else {
+                registraItensPedido(server_response.codigo, itensArray);
+                refreshUser(pedido.cpF_Usuario);
+            }
+        }).fail(function (server_response) {
+            console.error("Falha de comunicação com o servidor", server_response);
+        });
+    });
+
+    function registraItensPedido(codigo_pedido, itensArray) {
+        let pedidoItens = [];
+        let total = 0;
+        itensArray.forEach(element => {
+            let item = {
+                "codigo_Pedido": codigo_pedido,
+                "codigo_Item": parseInt(element.codigo),
+                "quantidade": element.quantidade,
+                "total": element.preco * element.quantidade
+            }
+            total += item.total
+
+            pedidoItens.push(item);
+        });
+
+        pedidoItens.forEach(element => {
+            $.ajax({
+                url: route + "PedidoItens",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(element),
+            }).done(function (server_response) {
+                window.localStorage.removeItem('itensCarrinho');
+                window.location.href = "pedido.html"
+            }).fail(function (server_response) {
+                console.error("Falha de comunicação com o servidor", server_response);
+            });
+        });
+    }
+
+    function refreshUser(cpf) {
+        $.ajax({
+            url: route + "Usuarios/" + cpf,
+            type: "GET",
+            contentType: "application/json",
+        }).done(function (server_response) {
+            if(server_response == "Usuário não encontrado") {
+                //ALERT USUARIO NÃO ENCONTRADO, PEDE PRA LOGAR DNV
+            }
+            else {
+                window.localStorage.setItem('usuario', JSON.stringify(server_response));
+                let saldoTexto = formatMoney(server_response.saldo);
+                $("#saldo").children().text(saldoTexto);
+            }
+        }).fail(function (server_response) {
+            console.error("Falha de comunicação com o servidor", server_response);
+        });
     }
 });

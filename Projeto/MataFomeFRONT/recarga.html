@@ -12,13 +12,10 @@
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery/jquery-1.11.1.min.js"></script>
     <script src="jquery/jquery.min.js"></script>
-    <script src="/path/to/js.cookie.js"></script>
     <script src="js/recarga.js"></script>
     <script src="js/js.js"></script>
+    <script src="jquery/jquery.maskMoney.js" type="text/javascript"></script>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
 
@@ -65,14 +62,25 @@
 
 
     </header>
-
-    <main class="recarga">  
-          <h1>Digite aqui o CPF do usuário que deseja realizar a recarga:</h1>          
-          <input id="inputRecargaCPF" type="text" name="input" value="">
-          <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger center-block"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div class="row">
+      <div class="col-lg-12">
+          <div class="page_title text-center mb-4">
+              <h1>Recarga</h1>
+              <div class="single_line"></div>
+          </div>
+      </div>
+    </div>
+    <main class="recarga"> 
+          <h1>Digite aqui o CPF do usuário que deseja realizar a recarga:</h1>
+          <input type="text" id="inputRecargaCPF" placeholder="Digite um CPF" maxlength="14" onkeyup="mascara_cpf()">         
+          <button id="btnSearchCPF" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger center-block"><i class="fa-solid fa-magnifying-glass"></i></button> <br>
+          <span id="alertRecargaCPFEmpty" class="alertRecarga textAlert hidden">CPF não pode ser vazio!</span>
+          <span id="alertRecargaCPFInvalid" class="alertRecarga textAlert hidden">CPF Inválido!</span>
+          <span id="alertRecargaCPFDontExist" class="alertRecarga textAlert hidden">Usuário não encontrado!</span>
+          <span id="alertRecargaCPFCliente" class="alertRecarga textAlert hidden">O usuário encontrado não é um cliente!</span>
 
           <!-- Modal Dados-->
-          <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
+          <div id="addSaldoModal" class="hidden">
             <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -100,13 +108,14 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="textinput">Saldo</label>
                 <div class="col-sm-4">
-                  <p>R$0,00</p>
+                  <p id="saldoAtualUser">R$0,00</p>
                   </div>
                 </div>
                 <div class="form-group">
-                <label class="col-sm-2 control-label" for="textinput">Valor</label>
+                <label class="col-sm-2 control-label" for="saldoAdicional">Valor</label>
                 <div class="col-sm-4">
-                  <input type="text" placeholder="R$" class="form-control">
+                  <input type="text" id="saldoAdicional" class="form-control" placeholder="00.00"/>
+                  <span id="alertSaldoZerado" class="textAlert hidden">O saldo informado deve ser maior que 0!</span>
                 </div>
               </div>
             </div>
@@ -114,8 +123,8 @@
               <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                   <div class="pull-right">
-                    <button type="submit" class="btn btn-default">Cancelar</button>
-                    <button type="submit" class="btn btn-danger">Adicionar Saldo</button>
+                    <button id="btnCancelAddSaldo" type="submit" class="btn btn-default">Cancelar</button>
+                    <button id="btnAddSaldo" type="submit" class="btn btn-danger">Adicionar Saldo</button>
                   </div>
                 </div>
               </div>

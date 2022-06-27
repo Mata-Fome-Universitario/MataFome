@@ -34,6 +34,8 @@ namespace MataFomeAPI.Migrations
                 name: "PedidoItens",
                 columns: table => new
                 {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Codigo_Pedido = table.Column<int>(type: "int", nullable: false),
                     Codigo_Item = table.Column<int>(type: "int", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
@@ -41,6 +43,7 @@ namespace MataFomeAPI.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_PedidoItens", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 

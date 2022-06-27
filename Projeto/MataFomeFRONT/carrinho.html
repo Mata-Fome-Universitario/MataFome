@@ -19,8 +19,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
 </head>
 <body id="fundoGeral">
-
-
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
@@ -68,8 +66,16 @@
 
     <main>
 	<div class="cart-wrap">
-		<div class="container">
 
+		<!-- Modal Adicionar e Editar Item -->
+		<div class="modalFade hidden"></div>
+		<div id="formItem" class="hidden">
+			<h2 class="alertTitle">Saldo Insuficiente!</h2>
+			<h3 class="alertMessage">Vá até um posto de recarga para realizar a compra.</h3>
+			<button id="btn-ok-alert" class="btn btn-danger">Ok</button>
+		</div>
+
+		<div class="container">
 			<div class="hidden">
 				<table>
 					<tbody>
@@ -107,10 +113,16 @@
 					<h3>Carrinho vazio!</h3>
 				</div>
 			</div>
-
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page_title text-center mb-4">
+						<h1>Carrinho</h1>
+						<div class="single_line"></div>
+					</div>
+				</div>
+			</div>
 	        <div class="row">
 			    <div class="col-lg-8">
-			        <div class="main-heading">Carrinho</div>
 			        <div class="table-cart">
 	                    <table>
 	                        <thead>
@@ -142,8 +154,8 @@
 			                </table>
 			                <div class="btn-cart-totals">
 			                    <a href="cardapio.html" class="update round-black-btn" title="">Continuar comprando</a>
-								<a id="clearCartBtn" href="#" class="update round-black-btn" title="">Limpar Carrinho</a>
-								<a href="#" class="checkout round-black-btn" title="">Ir para o pagamento</a>
+								<a id="clearCartBtn" class="update round-black-btn" title="">Limpar Carrinho</a>
+								<a id="finalizarPedido" class="checkout round-black-btn" title="">Finalizar Pedido</a>
 			                </div>
 			                <!-- /.btn-cart-totals -->
 			            </form>

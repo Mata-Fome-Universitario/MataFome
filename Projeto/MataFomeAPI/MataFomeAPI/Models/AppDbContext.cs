@@ -15,9 +15,6 @@ namespace MataFomeAPI.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PedidoItens>()
-                .HasNoKey();
-
             modelBuilder.Entity<Usuario>()
                 .Property(p => p.Saldo)
                     .HasPrecision(10, 2);
