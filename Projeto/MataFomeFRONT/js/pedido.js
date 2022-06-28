@@ -23,7 +23,7 @@ $(document).ready ( function () {
             type: "GET",
             contentType: "application/json",
         }).done(function (server_response) { 
-            if (server_response == "Nenhum pedido cadastrado") {
+            if (server_response.length == 0) {
                 let nenhumPedido = $(".pedidoVazio").clone();
                 $("#pedidosContainer").html(nenhumPedido);
             }

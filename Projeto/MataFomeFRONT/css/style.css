@@ -11,13 +11,41 @@ body {
 }
 
 /*menu*/
+@media screen and (max-width: 768px)  {
+    .right {
+        float: left !important;
+    }
+
+    .bootstrapFix {
+        margin-top: 4% !important;
+    }
+}
+
+@media screen and (min-width: 768px)  {
+    .right {
+        float: right !important;
+    }
+
+    .bootstrapFix {
+        position: fixed;
+        right: 2%;
+    }
+}
 
 .round-black-btn {
     color: white !important;
 }
 
-#saldo {
-    margin-left: 680px;
+.divTable {
+    margin-left: 20% !important;
+}
+
+.cardapioVazio {
+    margin-left: 25%;
+}
+
+.titlePerfil {
+    margin-bottom: -5%;
 }
 
 .descricaoSpan {
@@ -491,7 +519,17 @@ background:#f1f1f1;
 }
 
 /*FINAL PRATO DO DIA*/
+.form-control {
+    height: 34px !important;
+}
 
+#userName {
+    color: red;
+}
+
+#titleDelete {
+    text-align: center;
+}
 
 /*Carrinho*/
 .cart-wrap {

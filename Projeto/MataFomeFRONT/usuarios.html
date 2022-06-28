@@ -1,139 +1,185 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="jquery/jquery-1.11.1.min.js"></script>
-    <script src="jquery/jquery.min.js"></script>
-    <script src="/path/to/js.cookie.js"></script>
-    <script src="js/usuarios.js"></script>
-    <script src="js/js.js"></script>
-
-    <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Usuários</title>
-    <link rel="icon" type="image/jpg" href="img/logo.png"/>
+  <!--Bootstrap CSS-->
+  <link rel="stylesheet" href="css/style.css">
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="jquery/jquery-1.11.1.min.js"></script>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="js/usuarios.js"></script>
+  <script src="js/js.js"></script>
+  <link href="bootstrap/bootstrap-3.1.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="bootstrap/bootstrap-3.1.min.js"></script>
+
+  <script src="https://kit.fontawesome.com/bc1990d41a.js" crossorigin="anonymous"></script>
+
+
+  <title>Usuários</title>
+  <link rel="icon" type="image/jpg" href="img/logo.png" />
 </head>
+
 <body id="fundoGeral">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item" id="nav_usuarios">
-                    <a class="nav-link active" href="usuarios.html">Usuários</a>
-                  </li>
-                  <li class="nav-item" id="nav_perfil">
-                    <a class="nav-link" href="perfil.html">Perfil</a>
-                  </li>
-                  <li class="nav-item" id="logout" href="login.html">
-                    <a class="nav-link" href="login.html">Sair</a>
-                  </li>
-                  
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <main>
-      <div class="container">
-        <div class="row col-md-8 col-md-offset-2 custyle">
-        <table class="table table-striped custab">
-        <thead>
+  <header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+      <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li id="nav_usuarios" class="nav-item">
+            <a class="nav-link active" href="usuarios.html">Usuários</a>
+          </li> 
+          <li id="nav_perfil" class="nav-item">
+            <a class="nav-link" href="perfil.html">Perfil</a>
+          </li> 
+        </ul>
+        <ul class="navbar-nav right">
+          <li id="sair" class="nav-item">
+            <a class="nav-link" href="login.html">Sair</a>
+          </li> 
+        </ul>
+      </div>  
+    </nav>
+ 
+  </header>
+  <div class="hidden">
+    <table>
+      <tr class="trCloneClass" id="trClone">
+        <td class="trCPF">111.111.111-11</td>
+        <td class="trNome">Paola Lorrayne</td>
+        <td class="trEmail">paola@gmail.com</td>
+        <td class="trCargo">Vendedor</td>
+        <td class="text-center"><a data-toggle="modal" data-target="#squarespaceModal"
+            class='btn btn-info btn-xs editBtn' href="#"><span class="glyphicon glyphicon-edit"></span><i
+              class="fa-solid fa-pen"></i></a> <a data-toggle="modal" data-target="#deleteUserModal"
+            class="btn btn-danger btn-xs deleteBtn"><span class="glyphicon glyphicon-remove"></span><i
+              class="fa-solid fa-trash-can"></i></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <main>
+    <div class="container">
+      <div class="row col-md-8 col-md-offset-2 custyle divTable">
+        <table class="table table-striped custab tabelaUsers">
+          <thead id="tableHead">
             <tr>
-                <th>CPF</th>
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Cargo</th>
-                <th class="text-center">Ação</th>
+              <th>CPF</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Cargo</th>
+              <th class="text-center">Ação</th>
             </tr>
-        </thead>
-                <tr>
-                    <td>111.111.111-11</td>
-                    <td>Paola Lorrayne</td>
-                    <td>paola@gmail.com</td>
-                    <td>Vendedor</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                  <td>333.333.333-33</td>
-                  <td>Isabella Aguiar</td>
-                  <td>isa@gmail.com</td>
-                  <td>Vendedor</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
-                <tr>
-                  <td>222.222.222-2</td>
-                  <td>Sávio Cardoso</td>
-                  <td>savio@gmail.com</td>
-                  <td>Gerente</td>
-                    <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span><i class="fa-solid fa-pen"></i></a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span><i class="fa-solid fa-trash-can"></i></a></td>
-                </tr>
+          </thead>
+
         </table>
-        <button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger"><i class="fa-solid fa-circle-plus"></i> Adicionar Usuário</button>
+        <button id="addUser" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-danger"><i
+            class="fa-solid fa-circle-plus"></i> Adicionar Usuário</button>
         <!-- Modal adicionar usuário -->
-        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+          aria-hidden="true">
           <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">Close</span></button>
-              <h3 class="modal-title" id="lineModalLabel">Dados do Usuário</h3>
-            </div>
-            <div class="modal-body">
-        <!-- Formulário do Modal -->
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputNome1">CPF</label>
-                  <input type="cpf" class="form-control"placeholder="CPF">
-                </div>
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span
+                    class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel">Dados do Usuário</h3>
+              </div>
+              <div class="modal-body">
+                <!-- Formulário do Modal -->
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputNome1">CPF</label>
+                    <input type="cpf" class="form-control" id="inputCPF" placeholder="Digite seu cpf" maxlength="14"
+                      onkeyup="mascara_cpf()">
+                    <span id="alertPerfilCPFEmpty" class="textAlert hidden">CPF não pode ser vazio!</span>
+                    <span id="alertPerfilCPFInvalid" class="textAlert hidden">CPF Inválido!</span>
+                    <span id="alertPerfilCPFExist" class="textAlert hidden">Já existe um cadastro ativo com esse
+                      CPF!</span>
+                  </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nome</label>
-                    <input type="nome" class="form-control" placeholder="Nome">
+                    <input type="nome" id="inputNome" class="form-control" placeholder="Nome">
+                    <span id="alertPerfilNome" class="textAlert hidden">Nome não pode ser vazio!</span>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputCPF1">E-mail</label>
-                    <input type="email" class="form-control" placeholder="E-mail">
+                    <input id="inputEmail" type="email" class="form-control" placeholder="E-mail" id="inputEmail">
+                    <span id="alertPerfilEmailEmpty" class="textAlert hidden">Email não pode ser vazio!</span>
+                    <span id="alertPerfilEmailExist" class="textAlert hidden">Já existe um cadastro ativo com esse
+                      email!</span>
+                    <span id="alertPerfilEmailInvalid" class="textAlert hidden">Email inválido!</span>
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Cargo</label>
-                    <input type="cargo" class="form-control" placeholder="Cargo">
+                    <label for="selectCargo">Cargo:</label>
+                    <select class="form-control" id="selectCargo">
+                      <option value="Vendedor">Vendedor</option>
+                      <option value="Gerente">Gerente</option>
+                    </select>
                   </div>
-              </form>
-            </div>
-            <!--Footer Modal-->
-            <div class="modal-footer">
-              <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Cancelar</button>
+                </form>
+              </div>
+              <!--Footer Modal-->
+              <div class="modal-footer">
+                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Cancelar</button>
+                  </div>
+                  <div id="divNewUser" class="btn-group hidden" role="group">
+                    <button type="button" id="saveNewUser" class="btn btn-default btn-hover-green" data-action="save"
+                      role="button">Salvar</button>
+                  </div>
+                  <div id="divOldUser" class="btn-group hidden" role="group">
+                    <button type="button" id="saveOldUser" class="btn btn-default btn-hover-green" data-action="save"
+                      role="button">Salvar</button>
+                  </div>
                 </div>
-                <div class="btn-group" role="group">
-                  <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Salvar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Confirm Delete -->
+        <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span
+                    class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel">Deletar Usuário</h3>
+              </div>
+              <div class="modal-body">
+                <!-- Formulário do Modal -->
+                <form>
+                  <h3 id="titleDelete">Tem certeza que deseja deletar o usuário <span id="userName"></span>?</h3>
+                </form>
+              </div>
+              <!--Footer Modal-->
+              <div class="modal-footer">
+                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Cancelar</button>
+                  </div>
+                  <div class="btn-group" role="group">
+                    <button type="button" id="confirmDeleteUser" class="btn btn-default btn-hover-green" data-action="save"
+                      role="button">Confirmar</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    </main>
-    
+  </main>
+
 </body>
+
 </html>

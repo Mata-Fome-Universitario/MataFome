@@ -60,12 +60,15 @@ namespace MataFomeAPI.Controllers
 
                 usuario.Senha = oldUser.Senha;
 
-                Usuario newUser = _context.Usuarios.Where(x => x.Email == usuario.Email).AsNoTracking().FirstOrDefault();
-
-                if (newUser != null)
+                if (usuario.Email != oldUser.Email)
                 {
-                    if (newUser.CPF != oldUser.CPF)
-                        return Ok("Já existe um usuário cadastrado com esse Email");
+                    Usuario newUser = _context.Usuarios.Where(x => x.Email == usuario.Email).AsNoTracking().FirstOrDefault();
+
+                    if (newUser != null)
+                    {
+                        if (newUser.CPF != oldUser.CPF)
+                            return Ok("Já existe um usuário cadastrado com esse Email");
+                    }
                 }
 
                 if (!string.IsNullOrWhiteSpace(usuario.CPF) && usuario.CPF != cpf)
@@ -119,7 +122,7 @@ namespace MataFomeAPI.Controllers
 
         // DELETE: api/Usuarios/5
         [HttpDelete("{cpf}")]
-        public async Task<IActionResult> DeleteUsuario(long cpf)
+        public async Task<IActionResult> DeleteUsuario(string cpf)
         {
             var usuario = await _context.Usuarios.FindAsync(cpf);
             if (usuario == null)

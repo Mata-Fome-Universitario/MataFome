@@ -9,60 +9,51 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="css/style.css">
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
-    <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery/jquery-1.11.1.min.js"></script>
     <script src="jquery/jquery.min.js"></script>
     <script src="js/pedido.js"></script>
     <script src="js/js.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Pedidos</title>
     <link rel="icon" type="image/jpg" href="img/logo.png"/>
 </head>
 <body id="fundoGeral">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item" id="nav_cardapio">
-                    <a class="nav-link" href="cardapio.html">Cardápio</a>
-                  </li>
-                  <li class="nav-item" id="nav_carrinho">
-                    <a class="nav-link" href="carrinho.html">Carrinho</a>
-                  </li>
-                  <li class="nav-item" id="nav_pedidos">
-                    <a class="nav-link active" href="pedido.html">Pedidos</a>
-                  </li>
-                  <li class="nav-item" id="nav_usuarios">
-                    <a class="nav-link" href="usuarios.html">Usuários</a>
-                  </li>
-                  <li class="nav-item" id="nav_recarga">
-                    <a class="nav-link" href="recarga.html">Recarga</a>
-                  </li>
-                  <li class="nav-item" id="nav_perfil">
-                    <a class="nav-link" href="perfil.html">Perfil</a>
-                  </li>
-                  <li class="nav-item" id="saldo">
-                    <a class="nav-link"></a>
-                  </li>
-                  <li class="nav-item" id="logout" href="login.html">
-                    <a class="nav-link" href="login.html">Sair</a>
-                  </li>
-                  
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="cardapio.html">Mata Fome Univeristária</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li id="nav_cardapio" class="nav-item">
+              <a class="nav-link" href="cardapio.html">Cardápio</a>
+            </li>
+            <li id="nav_carrinho" class="nav-item">
+              <a class="nav-link" href="carrinho.html">Carrinho</a>
+            </li>
+            <li id="nav_pedidos" class="nav-item">
+              <a class="nav-link active" href="pedido.html">Pedidos</a>
+            </li>
+            <li id="nav_recarga" class="nav-item">
+              <a class="nav-link" href="recarga.html">Recarga</a>
+            </li>
+            <li id="nav_perfil" class="nav-item">
+              <a class="nav-link" href="perfil.html">Perfil</a>
+            </li> 
+          </ul>
+          <ul class="navbar-nav right bootstrapFix">
+            <li id="saldo" class="nav-item">
+              <a class="nav-link">Saldo</a>
+            </li> 
+            <li id="sair" class="nav-item">
+              <a class="nav-link" href="login.html">Sair</a>
+            </li> 
+          </ul>
+        </div>  
+      </nav>
     </header>
     <div class="row">
       <div class="col-lg-12">
@@ -98,7 +89,7 @@
         </div>
       </div>
 
-      <h3 class="pedidoVazio">Nenhum pedido disponível no momento.</h3>
+      <h3 class="cardapioVazio pedidoVazio">Nenhum pedido disponível no momento.</h3>
 
     </div>
 
